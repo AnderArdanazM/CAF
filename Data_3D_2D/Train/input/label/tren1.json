@@ -1,0 +1,88 @@
+{
+    "openlabel": {
+        "metadata": {
+            "schema_version": "1.0.0"
+        },
+        "frames": {
+            "0": {
+                "frame_properties": {},
+                "objects": {
+                    "0": {}
+                }
+            }
+        },
+        "frame_intervals": [
+            {
+                "frame_start": 0,
+                "frame_end": 0
+            }
+        ],
+        "coordinate_systems": {
+            "train": {
+                "type": "scene_cs",
+                "parent": "",
+                "children": [
+                    "lidar",
+                    "cam"
+                ]
+            },
+            "lidar": {
+                "type": "sensor_cs",
+                "parent": "train",
+                "children": [
+                ],
+                "pose_wrt_parent": {
+                    "matrix4x4": [
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 1.124,
+                        0, 0, 0, 1
+                    ]
+                }
+            },
+            "cam": {
+                "type": "sensor_cs",
+                "parent": "train",
+                "children": [],
+                "pose_wrt_parent": {
+                    "matrix4x4": [
+                        0, 0, 1, 0,
+                        -1, 0, 0, 0,
+                        0, -1, 0, 1.333,
+                        0, 0, 0, 1
+                    ]
+                }
+            }
+        },
+        "streams": {
+            "lidar": {
+                "description": "lidar l3cam",
+                "uri": "",
+                "type": "lidar"
+            },
+            "cam": {
+                "description": "fisheye camera",
+                "uri": "",
+                "type": "camera",
+                "stream_properties": {
+                    "intrinsics_pinhole": {
+                        "width_px": 1226,
+                        "height_px": 968,
+                        "camera_matrix_3x4":[
+                            343.9120647811345, 0, 607.7604385525885, 0,
+                            0, 345.1687590651459, 487.1030141622429, 0,
+                            0, 0, 1, 0
+                        ],
+                        "center_x": 607.7604385525885,
+                        "center_y": 487.1030141622429,
+                        "focal_length_x": 343.9120647811345,
+                        "focal_length_y": 345.1687590651459,
+                        "lens_coeffs_1xN":[0.04384534819330742, -0.0057133801113405935, -0.0021078184245699825, 0.0006753274435022145, 0.0],
+                        "distortion_coeffs_1xN":[0.04384534819330742, -0.0057133801113405935, -0.0021078184245699825, 0.0006753274435022145, 0.0],
+                        "model":"kannala"
+                    }
+                }
+            }
+        }
+    }
+}
